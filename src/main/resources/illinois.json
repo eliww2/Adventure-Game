@@ -1,25 +1,19 @@
 {
-  "startingRoom": "Home",
-  "endingRoom": "Kams",
-  "rooms": [
-    {
-      "name": "Home",
-      "description": "You are at home, it's quiet and smells like pizza rolls",
-      "directions": [
-        {
-          "directionName": "Outside",
-          "room": "BlockOne"
-        }
-      ]
-    },
+  "rooms": [{
+    "name": "Home",
+    "description": "You are at home, it's quiet and smells like pizza rolls",
+    "directions": [{
+      "directionName": "Outside",
+      "room": "BlockOne"
+    }]
+  },
     {
       "name": "BlockOne",
       "description": "You're outside of your dorm, you look over and see some a group feeding the squirrels",
-      "directions": [
-        {
-          "directionName": "Eat",
-          "room": "FatSandwich"
-        },
+      "directions": [{
+        "directionName": "Eat",
+        "room": "FatSandwich"
+      },
         {
           "directionName": "North",
           "room": "BlockTwo"
@@ -37,11 +31,10 @@
     {
       "name": "BlockTwo",
       "description": "You walk to the next block. Maybe you should have rode a bike.",
-      "directions": [
-        {
-          "directionName": "South",
-          "room": "BlockOne"
-        },
+      "directions": [{
+        "directionName": "South",
+        "room": "BlockOne"
+      },
         {
           "directionName": "Get tested",
           "room": "CovidTestCenter"
@@ -59,11 +52,10 @@
     {
       "name": "BlockThree",
       "description": "Hey your favorite block! You see The Quad, Kam's, and Professor Woodley's house.",
-      "directions": [
-        {
-          "directionName": "hang at The Quad",
-          "room": "TheQuad"
-        },
+      "directions": [{
+        "directionName": "hang at The Quad",
+        "room": "TheQuad"
+      },
         {
           "directionName": "to Kam's",
           "room": "Kams"
@@ -81,22 +73,18 @@
     {
       "name": "FatSandwich",
       "description": "You are at Fat Sandwich. Usually you eat here at 1 A.M.",
-      "directions": [
-        {
-          "directionName": "Outside",
-          "room": "BlockOne"
-        }
-      ]
+      "directions": [{
+        "directionName": "Outside",
+        "room": "BlockOne"
+      }]
     },
     {
       "name": "CovidTestCenter",
       "description": "You enter the test center.\n\"Funnel or Straw?\" they ask.\n\"Who get's a straw?\" you think to yourself.",
-      "directions": [
-        {
-          "directionName": "Outside",
-          "room": "BlockTwo"
-        }
-      ]
+      "directions": [{
+        "directionName": "Outside",
+        "room": "BlockTwo"
+      }]
     },
     {
       "name": "Kams",
@@ -105,12 +93,10 @@
     {
       "name": "TheQuad",
       "description": "You walk one to The Quad and you feel happy. There's people hammocking, playing frisbee, and picnicking.",
-      "directions": [
-        {
-          "directionName": "South",
-          "room": "BlockThree"
-        }
-      ]
+      "directions": [{
+        "directionName": "South",
+        "room": "BlockThree"
+      }]
     },
     {
       "name": "ProfessorsHouse",
@@ -119,22 +105,18 @@
     {
       "name": "TheARC",
       "description": "It's grind time. Let's hit those weights.",
-      "directions": [
-        {
-          "directionName": "Outside",
-          "room": "BlockTwo"
-        }
-      ]
+      "directions": [{
+        "directionName": "Outside",
+        "room": "BlockTwo"
+      }]
     },
     {
       "name": "EngineeringLibrary",
       "description": "Exams are next week and you hear people crying. Oh well you still have to study.",
-      "directions": [
-        {
-          "directionName": "OutSide",
-          "room": "BlockOne"
-        }
-      ]
+      "directions": [{
+        "directionName": "OutSide",
+        "room": "BlockOne"
+      }]
     }
   ]
 }

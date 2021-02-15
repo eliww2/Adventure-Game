@@ -1,5 +1,6 @@
 package student.adventure;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 import com.google.gson.Gson;
@@ -26,8 +27,17 @@ public class JsonTest {
     }
 
     @Test
-    public void compileTest() {
-        assert false;
+    public void RoomDeserializeTest() {
+        Game illinoisAdventure = gson.fromJson(jsonReader, Game.class);
+        assertEquals("Home", illinoisAdventure.getRooms()[0].getName());
     }
+
+    @Test
+    public void DirectionDeserializeTest() {
+        Game illinoisAdventure = gson.fromJson(jsonReader, Game.class);
+        assertEquals("Home", illinoisAdventure.getRooms()[0].getName());
+    }
+
+
 
 }
