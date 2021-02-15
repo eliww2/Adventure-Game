@@ -1,4 +1,6 @@
 {
+  "startingRoom": "Home",
+  "endingRoom": "Kams",
   "rooms": [{
     "name": "Home",
     "description": "You are at home, it's quiet and smells like pizza rolls",
@@ -87,10 +89,6 @@
       }]
     },
     {
-      "name": "Kams",
-      "description": "You made it to Kam's! Go have a good night with your friends!"
-    },
-    {
       "name": "TheQuad",
       "description": "You walk one to The Quad and you feel happy. There's people hammocking, playing frisbee, and picnicking.",
       "directions": [{
@@ -117,6 +115,10 @@
         "directionName": "OutSide",
         "room": "BlockOne"
       }]
+    },
+    {
+      "name": "Kams",
+      "description": "You made it to Kam's! Go have a good night with your friends!"
     }
   ]
 }

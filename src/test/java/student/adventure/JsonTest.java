@@ -35,7 +35,8 @@ public class JsonTest {
     @Test
     public void DirectionDeserializeTest() {
         Game illinoisAdventure = gson.fromJson(jsonReader, Game.class);
-        assertEquals("Home", illinoisAdventure.getRooms()[0].getName());
+        System.out.println(illinoisAdventure.getEndingRoom());
+        assertEquals("Outside", illinoisAdventure.getRooms()[0].getDirections()[0].getDirectionName());
     }
 
 
