@@ -35,10 +35,13 @@ public class JsonTest {
     @Test
     public void DirectionDeserializeTest() {
         Game illinoisAdventure = gson.fromJson(jsonReader, Game.class);
-        System.out.println(illinoisAdventure.getEndingRoom());
-        assertEquals("Outside", illinoisAdventure.getRooms()[0].getDirections()[0].getDirectionName());
+        assertEquals("Eat", illinoisAdventure.getRooms()[1].getDirections()[0].getDirectionName());
     }
 
-
-
+    @Test
+    public void ItemDeserializeTest() {
+        Game illinoisAdventure = gson.fromJson(jsonReader, Game.class);
+        System.out.println(illinoisAdventure.getRooms()[0].getItems()[0].getItemName());
+        assertEquals("Mask", illinoisAdventure.getRooms()[0].getItems()[0].getItemName());
+    }
 }

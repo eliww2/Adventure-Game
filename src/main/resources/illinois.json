@@ -7,6 +7,9 @@
     "directions": [{
       "directionName": "Outside",
       "room": "BlockOne"
+    }],
+    "items": [{
+      "itemName": "Mask"
     }]
   },
     {
