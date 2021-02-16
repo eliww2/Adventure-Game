@@ -1,5 +1,9 @@
+import student.adventure.GameEngine;
+
+import java.io.IOException;
+
 public class Main {
-    public static void main(String[] args) {
-        // Wishing you good luck on your Adventure!
+    public static void main(String[] args) throws IOException {
+        GameEngine.startGame(args[0]);
     }
 }
