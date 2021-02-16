@@ -21,7 +21,6 @@ public class GameEngine {
         Scanner in = new Scanner(System.in);
 
         System.out.println(currentGame.getInstructions());
-        System.out.println("\n");
         Room currentRoom = currentGame.getRooms()[0];
 
         while (running) {
@@ -29,9 +28,22 @@ public class GameEngine {
 
             String userInput = in.nextLine().trim();
 
-            Methods.actionRequested(userInput);
-
-
+            if (userInput.split(" ")[0].equalsIgnoreCase("quit")) {
+                System.out.println("GoodBye :)");
+                System.exit(0);
+            } else if (userInput.split(" ")[0].equalsIgnoreCase("examine")) {
+                continue;
+            } else if (userInput.split(" ")[0].equalsIgnoreCase("go")) {
+                Methods.updateRoom();
+            } else if (userInput.split(" ")[0].equalsIgnoreCase("take")) {
+                //Methods.updateInventory();
+            } else if (userInput.split(" ")[0].equalsIgnoreCase("drop")) {
+                //  Methods.updateInventory();
+            } else if (userInput.split(" ")[0].equalsIgnoreCase("use")) {
+                //Methods.updateItem()
+            } else {
+                System.out.println("Command not found!!!");
+            }
         }
     }
 }

@@ -1,5 +1,5 @@
 {
-  "instructions": "Welcome to University of Illinois Adventure!\n----------------------------------------------------------\n\nYour goal is to get to Kams tonight to relax with your friends after a long week.\nHowever you need to do somethings before you can go:\n1.  Get a negative Covid Test Result\n2.  Get something to eat before you go out\n3.  Get Swole!\n4.  Finish studying at the library.",
+  "instructions": "Welcome to University of Illinois Adventure!\n----------------------------------------------------------\nYour goal is to get to Kams tonight to relax with your friends after a long week.\nHowever you need to do somethings before you can go:\n1.  Get a negative Covid Test Result\n2.  Get something to eat before you go out\n3.  Get Swole!\n4.  Finish studying at the library.\n----------------------------------------------------------\n",
   "startingRoom": "Home",
   "endingRoom": "Kams",
   "rooms": [{

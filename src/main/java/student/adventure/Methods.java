@@ -5,7 +5,7 @@ import java.sql.SQLOutput;
 public class Methods {
 
     public static void whereIsUser(Room currentRoom) {
-        System.out.println(currentRoom.getDescription());
+        System.out.println("\n" + currentRoom.getDescription());
 
         System.out.print("From here, you can go: ");
         for (Direction nextDirection : currentRoom.getDirections()) {
@@ -19,7 +19,7 @@ public class Methods {
 
     }
 
-    private static void updateRoom(String userInput) {
+    public static void updateRoom() {
 
     }
 
@@ -27,7 +27,7 @@ public class Methods {
         if (userInput.split(" ")[0].equalsIgnoreCase("quit")) {
             System.exit(0);
         } else if (userInput.split(" ")[0].equalsIgnoreCase("go")) {
-            updateRoom(userInput);
+
         } else if (userInput.split(" ")[0].equalsIgnoreCase("examine")) {
 
         } else if (userInput.split(" ")[0].equalsIgnoreCase("take")) {
