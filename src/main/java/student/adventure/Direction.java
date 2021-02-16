@@ -1,10 +1,13 @@
 package student.adventure;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Direction {
     private String directionName;
-    private String room;
+    @SerializedName("room")
+    private String roomName;
 
     public String getDirectionName() { return directionName; }
 
-    public String getRoom() { return room; }
+    public String getRoomName() { return roomName; }
 }
