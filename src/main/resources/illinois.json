@@ -15,7 +15,7 @@
   },
     {
       "name": "BlockOne",
-      "description": "You're outside of your dorm, you look over and see some a group feeding the squirrels",
+      "description": "You're outside of your dorm on BlockOne, you look over and see some a group feeding the squirrels",
       "directions": [{
         "directionName": "Eat",
         "room": "FatSandwich"
@@ -36,7 +36,7 @@
     },
     {
       "name": "BlockTwo",
-      "description": "You walk to the next block. Maybe you should have rode a bike.",
+      "description": "You walk to BlockTwo. Maybe you should have rode a bike.",
       "directions": [{
         "directionName": "South",
         "room": "BlockOne"
@@ -57,7 +57,7 @@
     },
     {
       "name": "BlockThree",
-      "description": "Hey your favorite block! You see The Quad, Kam's, and Professor Woodley's house.",
+      "description": "Hey your favorite block, BlockThree! You see The Quad, Kam's, and Professor Woodley's house.",
       "directions": [{
         "directionName": "hang at The Quad",
         "room": "TheQuad"
@@ -100,7 +100,7 @@
     },
     {
       "name": "TheQuad",
-      "description": "You walk one to The Quad and you feel happy. There's people hammocking, playing frisbee, and picnicking.",
+      "description": "You walk over to The Quad and you feel happy. There's people hammocking, playing frisbee, and picnicking.",
       "directions": [{
         "directionName": "South",
         "room": "BlockThree"
@@ -112,7 +112,7 @@
     },
     {
       "name": "TheARC",
-      "description": "It's grind time. Let's hit those weights.",
+      "description": "The ARC. It's grind time. Let's hit those weights.",
       "directions": [{
         "directionName": "Outside",
         "room": "BlockTwo"
@@ -120,7 +120,7 @@
     },
     {
       "name": "EngineeringLibrary",
-      "description": "Exams are next week and you hear people crying. Oh well you still have to study.",
+      "description": "You enter the Engineering Library Exams are next week and you hear people crying. Oh well you still have to study.",
       "directions": [{
         "directionName": "OutSide",
         "room": "BlockOne"

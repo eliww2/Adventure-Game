@@ -21,20 +21,17 @@ public class GameEngine {
         Scanner in = new Scanner(System.in);
 
         System.out.println(currentGame.getInstructions());
-        //String currentRoom = currentGame.getStartingRoom();
-        //String roomDescription = currentGame.getRooms()[0].getDescription();
+        System.out.println("\n");
+        Room currentRoom = currentGame.getRooms()[0];
 
         while (running) {
-            /*
-            System.out.println("You are now i");
-            System.out.print("\n>");
-            String userInput = in.nextLine();
+            Methods.whereIsUser(currentRoom);
 
-            /*
-            System.out.println(userInput);
-            if (userInput.equals("poop")) {
-                running = false;
-            } */
+            String userInput = in.nextLine().trim();
+
+            Methods.actionRequested(userInput);
+
+
         }
     }
 }
