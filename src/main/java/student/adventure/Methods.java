@@ -1,6 +1,6 @@
 package student.adventure;
 
-import java.sql.SQLOutput;
+import java.util.Locale;
 
 public class Methods {
 
@@ -12,33 +12,28 @@ public class Methods {
             System.out.print(nextDirection.getDirectionName() + " ");
         }
         System.out.print("\nItems visible: ");
-        for (Item nexItem : currentRoom.getItems()) {
-            System.out.print(nexItem.getItemName() + " ");
+        for (Item nextItem : currentRoom.getItems()) {
+            System.out.print(nextItem.getItemName() + " ");
         }
         System.out.print("\n\n>");
 
     }
 
-    public static void updateRoom() {
+    public static Room updateRoom(String userRequest, Room currentRoom, Game game) {
 
-    }
-
-    public static void actionRequested(String userInput) {
-        if (userInput.split(" ")[0].equalsIgnoreCase("quit")) {
-            System.exit(0);
-        } else if (userInput.split(" ")[0].equalsIgnoreCase("go")) {
-
-        } else if (userInput.split(" ")[0].equalsIgnoreCase("examine")) {
-
-        } else if (userInput.split(" ")[0].equalsIgnoreCase("take")) {
-
-        } else if (userInput.split(" ")[0].equalsIgnoreCase("drop")) {
-
-        } else if (userInput.split(" ")[0].equalsIgnoreCase("use")) {
-
-        } else {
-
+        for (Direction nextDirection : currentRoom.getDirections()) {
+            if (nextDirection.getDirectionName().equalsIgnoreCase(userRequest)) {
+                for (Room nextRoom : game.getRooms()) {
+                    if (nextRoom.getName().equals(nextDirection.getRoomName())) {
+                        return nextRoom;
+                    }
+                }
+            }
         }
+
+        System.out.println("\nSorry, that's not a room :(");
+        return currentRoom;
     }
+
 
 }
