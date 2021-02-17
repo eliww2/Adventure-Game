@@ -12,6 +12,10 @@ import java.util.Scanner;
 
 public class GameEngine {
 
+    /**
+     * @param gameFile takes the game file in json and runs it.
+     * @throws IOException if json can't be processed.
+     */
     public static void startGame(String gameFile) throws IOException {
         //initialize game
         Gson gson = new Gson();

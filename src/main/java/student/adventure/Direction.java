@@ -7,7 +7,13 @@ public class Direction {
     @SerializedName("room")
     private String roomName;
 
+    /**
+     * @return directionName
+     */
     public String getDirectionName() { return directionName; }
 
+    /**
+     * @return roomName
+     */
     public String getRoomName() { return roomName; }
 }
