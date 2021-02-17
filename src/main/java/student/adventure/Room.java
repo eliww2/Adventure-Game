@@ -1,9 +1,12 @@
 package student.adventure;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Room {
     private String name, description;
     private Direction[] directions;
-    private Item[] items;
+    private List<Item> items = new ArrayList<>();
 
     public String getName() { return name; }
 
@@ -11,5 +14,5 @@ public class Room {
 
     public Direction[] getDirections() { return directions; }
 
-    public Item[] getItems() { return items; }
+    public List<Item> getItems() { return items; }
 }

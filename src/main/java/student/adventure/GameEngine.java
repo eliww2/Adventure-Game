@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class GameEngine {
@@ -21,10 +23,10 @@ public class GameEngine {
         //variables specific to the game
         System.out.println(currentGame.getInstructions());
         Room currentRoom = currentGame.getRooms()[0];
-
+        List<Item> inventory = new ArrayList<>();
 
         while (running) {
-            Methods.whereIsUser(currentRoom);
+            Methods.whereIsUser(currentRoom, inventory);
 
             String userInput = in.nextLine().trim();
             String[] userInputParts = userInput.split(" ");
@@ -39,11 +41,19 @@ public class GameEngine {
             } else if (userCommand.equalsIgnoreCase("go")) {
                 currentRoom = Methods.updateRoom(userRequest, currentRoom, currentGame);
             } else if (userCommand.equalsIgnoreCase("take")) {
-                //Methods.updateInventory();
+               Item toAdd = Methods.addToInventory(userRequest, currentRoom);
+               if (toAdd == null) {
+                   System.out.println("Not an Item in this room!");
+               } else {
+                   inventory.add(toAdd);
+               }
             } else if (userCommand.equalsIgnoreCase("drop")) {
-                //  Methods.updateInventory();
+                Item toRemove = Methods.removeFromInventory(userRequest, currentRoom);
+                  if (toRemove == null) {
+                      System.out.println("You don't have this item!");
+                  }
             } else if (userCommand.equalsIgnoreCase("use")) {
-                //Methods.updateItem()
+                Methods.updateItem();
             } else {
                 System.out.println("\nCommand not found!!!");
             }

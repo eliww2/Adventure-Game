@@ -43,7 +43,7 @@
         "room": "BlockOne"
       },
         {
-          "directionName": "Get tested",
+          "directionName": "Test",
           "room": "CovidTestCenter"
         },
         {
@@ -60,7 +60,7 @@
       "name": "BlockThree",
       "description": "Hey your favorite block, BlockThree! You see The Quad, Kam's, and Professor Woodley's house.",
       "directions": [{
-        "directionName": "hang at The Quad",
+        "directionName": "North",
         "room": "TheQuad"
       },
         {
@@ -85,7 +85,7 @@
         "room": "BlockOne"
       }],
       "items": [{
-        "itemName": "Fat Illini"
+        "itemName": "FatIllini"
       }]
     },
     {
@@ -96,7 +96,7 @@
         "room": "BlockTwo"
       }],
       "items": [{
-        "itemName": "Test Tube"
+        "itemName": "TestTube"
       }]
     },
     {
