@@ -26,8 +26,9 @@ public class GameEngine {
         List<Item> inventory = new ArrayList<>();
 
         while (running) {
-            Methods.whereIsUser(currentRoom, inventory);
+            changeState.whereIsUser(currentRoom, inventory);
 
+            //Strings for parsing the user input
             String userInput = in.nextLine().trim();
             String[] userInputParts = userInput.split(" ");
             String userCommand = userInputParts[0];
@@ -36,38 +37,35 @@ public class GameEngine {
             if (userCommand.equalsIgnoreCase("quit")) {
                 System.out.println("GoodBye :)");
                 System.exit(0);
+
             } else if (userCommand.equalsIgnoreCase("examine")) {
                 continue;
+
             } else if (userCommand.equalsIgnoreCase("go")) {
-                currentRoom = Methods.updateRoom(userRequest, currentRoom, currentGame);
+                currentRoom = changeState.updateRoom(userRequest, currentRoom, currentGame);
+
             } else if (userCommand.equalsIgnoreCase("take")) {
-               Item toAdd = Methods.addToInventory(userRequest, currentRoom);
+
+               Item toAdd = changeState.addToInventory(userRequest, currentRoom);
                if (toAdd == null) {
-                   System.out.println("Not an Item in this room!");
+                   System.out.println("There is no " + userRequest + "in the room");
                } else {
                    inventory.add(toAdd);
                }
+
             } else if (userCommand.equalsIgnoreCase("drop")) {
-                Item toRemove = Methods.removeFromInventory(userRequest, currentRoom);
+
+                Item toRemove = changeState.removeFromInventory(userRequest, currentRoom, inventory);
                   if (toRemove == null) {
-                      System.out.println("You don't have this item!");
+                      System.out.println("You don't have" + userRequest);
                   }
-            } else if (userCommand.equalsIgnoreCase("use")) {
-                Methods.updateItem();
+                inventory.remove(toRemove);
+
             } else {
-                System.out.println("\nCommand not found!!!");
+                System.out.println("\nI don't understand \"" + userInput + "\"");
             }
 
-            //Checks if the user is either in the winning room or losing win
-            // move to separate method
-            if (currentRoom.getName().equals(currentGame.getWinningRoom())) {
-                System.out.println("Congratulations You Won!");
-                running = false;
-            } else if (currentRoom.getName().equals(currentGame.getLosingRoom())) {
-                System.out.println(currentRoom.getDescription());
-                running = false;
-            }
-
+            running = changeState.checkForEnd(currentGame, currentRoom);
         }
     }
 }

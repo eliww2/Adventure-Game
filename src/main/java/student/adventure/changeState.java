@@ -4,23 +4,23 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
 
-public class Methods {
+public class changeState {
 
     public static void whereIsUser(Room currentRoom, List<Item> inventory) {
         System.out.println("\n" + currentRoom.getDescription());
 
         System.out.print("From here, you can go: ");
         for (Direction nextDirection : currentRoom.getDirections()) {
-            System.out.print(nextDirection.getDirectionName() + " ");
+            System.out.print(nextDirection.getDirectionName() + ", ");
         }
         System.out.print("\nItems visible: ");
         for (Item nextItem : currentRoom.getItems()) {
-            System.out.print(nextItem.getItemName() + " ");
+            System.out.print(nextItem.getItemName() + ", ");
         }
 
         System.out.print("\nYou're Items are: ");
         for (Item nextItem : inventory) {
-            System.out.println(nextItem.getItemName() + " ");
+            System.out.print(nextItem.getItemName() + ", ");
         }
         System.out.print("\n\n>");
 
@@ -38,7 +38,7 @@ public class Methods {
             }
         }
 
-        System.out.println("\nSorry, that's not a room :(");
+        System.out.println("\nI can't go" + userRequest);
         return currentRoom;
     }
 
@@ -55,9 +55,9 @@ public class Methods {
         return null;
     }
 
-    public static Item removeFromInventory(String userRequest, Room currentRoom) {
+    public static Item removeFromInventory(String userRequest, Room currentRoom, List<Item> inventory) {
 
-        for (Item nextItem : currentRoom.getItems()) {
+        for (Item nextItem : inventory) {
             if (nextItem.getItemName().equalsIgnoreCase(userRequest)) {
                 currentRoom.getItems().add(nextItem);
                 return nextItem;
@@ -66,9 +66,15 @@ public class Methods {
         return null;
     }
 
-    public static void updateItem() {
-        throw new NotImplementedException();
+    public static boolean checkForEnd(Game currentGame, Room currentRoom) {
+        if (currentRoom.getName().equals(currentGame.getWinningRoom())) {
+            System.out.println("Congratulations You Won!");
+            return false;
+        } else if (currentRoom.getName().equals(currentGame.getLosingRoom())) {
+            System.out.println(currentRoom.getDescription());
+            return false;
+        }
+        return true;
     }
-
 
 }

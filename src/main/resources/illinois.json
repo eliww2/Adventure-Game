@@ -64,11 +64,11 @@
         "room": "TheQuad"
       },
         {
-          "directionName": "to Kam's",
+          "directionName": "party",
           "room": "Kams"
         },
         {
-          "directionName": "hang with Professor Woodley",
+          "directionName": "visitWoodley",
           "room": "ProfessorsHouse"
         },
         {
