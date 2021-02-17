@@ -4,7 +4,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
 
-public class changeState {
+public class ChangeState {
 
     /**
      * Prints out the players surroundings each round

@@ -30,7 +30,7 @@ public class GameEngine {
         List<Item> inventory = new ArrayList<>();
 
         while (running) {
-            changeState.whereIsUser(currentRoom, inventory);
+            ChangeState.whereIsUser(currentRoom, inventory);
 
             //Strings for parsing the user input
             String userInput = in.nextLine().trim();
@@ -46,11 +46,11 @@ public class GameEngine {
                 continue;
 
             } else if (userCommand.equalsIgnoreCase("go")) {
-                currentRoom = changeState.updateRoom(userRequest, currentRoom, currentGame);
+                currentRoom = ChangeState.updateRoom(userRequest, currentRoom, currentGame);
 
             } else if (userCommand.equalsIgnoreCase("take")) {
 
-               Item toAdd = changeState.addToInventory(userRequest, currentRoom);
+               Item toAdd = ChangeState.addToInventory(userRequest, currentRoom);
                if (toAdd == null) {
                    System.out.println("There is no " + userRequest + "in the room");
                } else {
@@ -59,7 +59,7 @@ public class GameEngine {
 
             } else if (userCommand.equalsIgnoreCase("drop")) {
 
-                Item toRemove = changeState.removeFromInventory(userRequest, currentRoom, inventory);
+                Item toRemove = ChangeState.removeFromInventory(userRequest, currentRoom, inventory);
                   if (toRemove == null) {
                       System.out.println("You don't have" + userRequest);
                   }
@@ -69,7 +69,7 @@ public class GameEngine {
                 System.out.println("\nI don't understand \"" + userInput + "\"");
             }
 
-            running = changeState.checkForEnd(currentGame, currentRoom);
+            running = ChangeState.checkForEnd(currentGame, currentRoom);
         }
     }
 }
