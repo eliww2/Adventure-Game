@@ -24,7 +24,6 @@ public class GameEngine {
         Scanner in = new Scanner(System.in);
 
         System.out.println(currentGame.getInstructions());
-        Room currentRoom = currentGame.getRooms()[0];
 
         while (running) {
             ChangeState.whereIsUser(currentGame);
@@ -36,9 +35,7 @@ public class GameEngine {
             String userRequest = userInputParts[userInputParts.length - 1];
 
             if (userCommand.equalsIgnoreCase("quit")) {
-                System.out.println("GoodBye :)");
                 System.exit(0);
-
             } else if (userCommand.equalsIgnoreCase("examine")) {
                 continue;
             } else if (userCommand.equalsIgnoreCase("go")) {
