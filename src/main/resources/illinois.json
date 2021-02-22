@@ -13,7 +13,8 @@
       "itemName": "Mask"
     }],
     "maskRequired": false,
-    "keyRequired": false
+    "keyRequired": false,
+    "testRequired": false
   },
     {
       "name": "BlockOne",
@@ -36,7 +37,8 @@
         }
       ],
       "maskRequired": false,
-      "keyRequired": false
+      "keyRequired": false,
+      "testRequired": false
     },
     {
       "name": "BlockTwo",
@@ -59,7 +61,8 @@
         }
       ],
       "maskRequired": false,
-      "keyRequired": false
+      "keyRequired": false,
+      "testRequired": false
     },
     {
       "name": "BlockThree",
@@ -82,7 +85,8 @@
         }
       ],
       "maskRequired": false,
-      "keyRequired": false
+      "keyRequired": false,
+      "testRequired": false
     },
     {
       "name": "FatSandwich",
@@ -95,7 +99,8 @@
         "itemName": "FatIllini"
       }],
       "maskRequired": true,
-      "keyRequired": false
+      "keyRequired": false,
+      "testRequired": true
     },
     {
       "name": "CovidTestCenter",
@@ -108,7 +113,8 @@
         "itemName": "TestTube"
       }],
       "maskRequired": true,
-      "keyRequired": false
+      "keyRequired": false,
+      "testRequired": false
     },
     {
       "name": "TheQuad",
@@ -118,13 +124,15 @@
         "room": "BlockThree"
       }],
       "maskRequired": true,
-      "keyRequired": false
+      "keyRequired": false,
+      "testRequired": false
     },
     {
       "name": "ProfessorsHouse",
       "description": "Why did you think that was a good idea? The cops arrested you for breaking and entering.",
       "maskRequired": true,
-      "keyRequired": true
+      "keyRequired": true,
+      "testRequired": false
     },
     {
       "name": "TheARC",
@@ -134,7 +142,8 @@
         "room": "BlockTwo"
       }],
       "maskRequired": true,
-      "keyRequired": false
+      "keyRequired": false,
+      "testRequired": true
     },
     {
       "name": "EngineeringLibrary",
@@ -147,13 +156,15 @@
         "itemName": "Key"
       }],
       "maskRequired": true,
-      "keyRequired": false
+      "keyRequired": false,
+      "testRequired": true
     },
     {
       "name": "Kams",
       "description": "You made it to Kam's! Go have a good night with your friends!",
       "maskRequired": true,
-      "keyRequired": false
+      "keyRequired": false,
+      "testRequired": true
     }
   ]
 }

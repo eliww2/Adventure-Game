@@ -7,8 +7,7 @@ public class Room {
     private String name, description;
     private Direction[] directions;
     private List<Item> items = new ArrayList<>();
-    private Boolean maskRequired;
-    private Boolean keyRequired;
+    private Boolean maskRequired, keyRequired, testRequired;
 
     /**
      * @return name of the room.
@@ -41,6 +40,11 @@ public class Room {
     public Boolean getKeyRequired() { return keyRequired; }
 
     /**
+     * @return if the room needs a covid test to enter.
+     */
+    public Boolean getTestRequired() { return testRequired; }
+
+    /**
      * @param bool sets maskRequired boolean.
      */
     public void setMaskRequired(Boolean bool) { maskRequired = bool;}
@@ -49,5 +53,10 @@ public class Room {
      * @param bool sets keyRequired boolean.
      */
     public void setKeyRequired(Boolean bool) { keyRequired = bool;}
+
+    /**
+     * @param bool set testRequired boolean.
+     */
+    public void setTestRequired(Boolean bool) { testRequired = bool;}
 
 }

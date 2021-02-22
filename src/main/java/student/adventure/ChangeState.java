@@ -40,8 +40,8 @@ public class ChangeState {
             if (nextDirection.getDirectionName().equalsIgnoreCase(userRequest)) {
                 for (Room nextRoom : currentGame.getRooms()) {
                     if (nextRoom.getName().equals(nextDirection.getRoomName())) {
-                        if(!(nextRoom.getMaskRequired()) && !(nextRoom.getKeyRequired())) {
-                            noEnter = false;
+                        if(!(nextRoom.getMaskRequired()) && !(nextRoom.getKeyRequired()) && !(nextRoom.getTestRequired())) {
+                           noEnter = false;
                            currentGame.setCurrentRoom(nextRoom);
                            break;
                         }
@@ -127,8 +127,14 @@ public class ChangeState {
                         nextRoom.setMaskRequired(false);
                     }
                 } else if (nextItem.getItemName().equalsIgnoreCase("key")) {
+                    noUse = false;
                     for (Room nextRoom : currentGame.getRooms()) {
                         nextRoom.setKeyRequired(false);
+                    }
+                } else if (nextItem.getItemName().equalsIgnoreCase("testtube")) {
+                    noUse = false;
+                    for (Room nextRoom : currentGame.getRooms()) {
+                        nextRoom.setTestRequired(false);
                     }
                 }
                 currentGame.getInventory().remove(nextItem);
