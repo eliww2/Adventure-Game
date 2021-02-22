@@ -68,17 +68,14 @@ public class ChangeState {
      * @param currentRoom what room the user is in.
      * @return the item to be added to the inventory.
      */
-    public static Item addToInventory(String userRequest, Room currentRoom) {
-        int itemIndex = 0;
+    public static void addToInventory(String userRequest, Room currentRoom, Game currentGame) {
         for (Item nextItem : currentRoom.getItems()) {
 
             if (nextItem.getItemName().equalsIgnoreCase(userRequest)) {
-                currentRoom.getItems().remove(itemIndex);
-                return nextItem;
+                currentRoom.getItems().remove(nextItem);
+                currentGame.getInventory().add(nextItem);
             }
-            itemIndex++;
         }
-        return null;
     }
 
     /**
@@ -86,18 +83,16 @@ public class ChangeState {
      *
      * @param userRequest what item the user wants to drop.
      * @param currentRoom what room the user is
-     * @param inventory the inventory of the user
+     * @param currentGame the inventory of the user
      * @return the item that will be removed.
      */
-    public static Item removeFromInventory(String userRequest, Room currentRoom, List<Item> inventory) {
-
-        for (Item nextItem : inventory) {
+    public static void removeFromInventory(String userRequest, Room currentRoom, Game currentGame) {
+        for (Item nextItem : currentGame.getInventory()) {
             if (nextItem.getItemName().equalsIgnoreCase(userRequest)) {
                 currentRoom.getItems().add(nextItem);
-                return nextItem;
+                currentGame.getInventory().remove(nextItem);
             }
         }
-        return null;
     }
 
     /**
@@ -118,7 +113,7 @@ public class ChangeState {
         return true;
     }
 
-    public static void useItem(String userRequest, Game currentGame, Room currentRoom) {
+    public static void useItem(String userRequest, Game currentGame) {
         for (Item nextItem : currentGame.getInventory()) {
 
             if (nextItem.getItemName().equalsIgnoreCase(userRequest)) {

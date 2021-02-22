@@ -46,26 +46,12 @@ public class GameEngine {
 
             } else if (userCommand.equalsIgnoreCase("go")) {
                 currentRoom = ChangeState.updateRoom(userRequest, currentRoom, currentGame);
-
             } else if (userCommand.equalsIgnoreCase("take")) {
-
-               Item toAdd = ChangeState.addToInventory(userRequest, currentRoom);
-               if (toAdd == null) {
-                   System.out.println("There is no " + userRequest + "in the room");
-               } else {
-                   currentGame.getInventory().add(toAdd);
-               }
-
+                ChangeState.addToInventory(userRequest, currentRoom, currentGame);
             } else if (userCommand.equalsIgnoreCase("drop")) {
-
-                Item toRemove = ChangeState.removeFromInventory(userRequest, currentRoom, currentGame.getInventory());
-                  if (toRemove == null) {
-                      System.out.println("You don't have" + userRequest);
-                  }
-                currentGame.getInventory().remove(toRemove);
-
+                ChangeState.removeFromInventory(userRequest, currentRoom, currentGame);
             } else if (userCommand.equalsIgnoreCase("use")) {
-                ChangeState.useItem(userRequest, currentGame, currentRoom);
+                ChangeState.useItem(userRequest, currentGame);
             } else {
                 System.out.println("\nI don't understand \"" + userInput + "\"");
             }
