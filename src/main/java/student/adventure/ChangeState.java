@@ -119,23 +119,23 @@ public class ChangeState {
     }
 
     public static void useItem(String userRequest, Game currentGame, Room currentRoom) {
-        int itemIndex = 0;
-
-        for (Item nextItem : currentRoom.getItems()) {
+        for (Item nextItem : currentGame.getInventory()) {
 
             if (nextItem.getItemName().equalsIgnoreCase(userRequest)) {
                 System.out.println("\nUsing " + nextItem.getItemName());
                 if (nextItem.getItemName().equalsIgnoreCase("mask")) {
-                    currentRoom.setMaskRequired(false);
+                    for (Room nextRoom : currentGame.getRooms()) {
+                        nextRoom.setMaskRequired(false);
+                    }
                 } else if (nextItem.getItemName().equalsIgnoreCase("key")) {
-                    currentRoom.setKeyRequired(false);
+                    for (Room nextRoom : currentGame.getRooms()) {
+                        nextRoom.setKeyRequired(false);
+                    }
                 }
-                currentRoom.getItems().remove(itemIndex);
+                currentGame.getInventory().remove(nextItem);
                 break;
             }
-            itemIndex++;
         }
-        System.out.println("You can't use that!");
     }
 
 }
