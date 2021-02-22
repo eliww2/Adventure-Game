@@ -2,13 +2,13 @@ package student.adventure;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Game {
     private String instructions;
-    private String startingRoom, winningRoom, losingRoom;
+    private String winningRoom, losingRoom;
     private Room[] rooms;
     private List<Item> inventory = new ArrayList<>();
+    private Room currentRoom;
 
 
     /**
@@ -19,7 +19,12 @@ public class Game {
     /**
      * @return the name of the room the user starts in.
      */
-    public String getStartingRoom() { return startingRoom; }
+    public Room getCurrentRoom() { return currentRoom; }
+
+    /**
+     * @param setCurrentRoom sets the room that is currently in.
+     */
+    public void setCurrentRoom(Room setCurrentRoom) { currentRoom = setCurrentRoom; }
 
     /**
      * @return the name of the room the user needs to enter to win.

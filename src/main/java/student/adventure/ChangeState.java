@@ -9,24 +9,23 @@ public class ChangeState {
     /**
      * Prints out the players surroundings each round
      *
-     * @param currentRoom takes the room so it displays the right info.
-     * @param inventory takes the inventory so it displays the right info.
+     * @param currentGame takes the room so it displays the right info.
      */
-    public static void whereIsUser(Room currentRoom, List<Item> inventory) {
-        System.out.println("\n" + currentRoom.getDescription());
+    public static void whereIsUser(Game currentGame) {
+        System.out.println("\n" + currentGame.getCurrentRoom().getDescription());
 
         System.out.print("From here, you can go: ");
-        for (Direction nextDirection : currentRoom.getDirections()) {
+        for (Direction nextDirection : currentGame.getCurrentRoom().getDirections()) {
             System.out.print(nextDirection.getDirectionName() + ", ");
         }
 
         System.out.print("\nItems visible: ");
-        for (Item nextItem : currentRoom.getItems()) {
+        for (Item nextItem : currentGame.getCurrentRoom().getItems()) {
             System.out.print(nextItem.getItemName() + ", ");
         }
 
         System.out.print("\nYou're Items are: ");
-        for (Item nextItem : inventory) {
+        for (Item nextItem : currentGame.getInventory()) {
             System.out.print(nextItem.getItemName() + ", ");
         }
         System.out.print("\n\n>");
@@ -37,43 +36,36 @@ public class ChangeState {
      * Takes the place the user wants to go and changes there room to it if it's valid
      *
      * @param userRequest the direction the user wants to go
-     * @param currentRoom the current room
-     * @param game the current game being ran
-     * @return returns the new current room
+     * @param currentGame the current game being ran
      */
-    public static Room updateRoom(String userRequest, Room currentRoom, Game game) {
+    public static void updateRoom(String userRequest, Game currentGame) {
 
-        for (Direction nextDirection : currentRoom.getDirections()) {
+        for (Direction nextDirection : currentGame.getCurrentRoom().getDirections()) {
             if (nextDirection.getDirectionName().equalsIgnoreCase(userRequest)) {
-                for (Room nextRoom : game.getRooms()) {
+                for (Room nextRoom : currentGame.getRooms()) {
                     if (nextRoom.getName().equals(nextDirection.getRoomName())) {
                         if(!(nextRoom.getMaskRequired()) && !(nextRoom.getKeyRequired())) {
-                            return nextRoom;
-                        } else {
-                            System.out.println("Hmmmmm, I think you need something to enter here");
-                            return currentRoom;
+                           currentGame.setCurrentRoom(nextRoom);
+                           break;
                         }
                     }
                 }
             }
         }
-
-        System.out.println("\nI can't go " + userRequest);
-        return currentRoom;
     }
 
     /**
      * Moves item in a room to the users inventory.
      * @param userRequest what the user wants to take.
-     * @param currentRoom what room the user is in.
-     * @return the item to be added to the inventory.
+     * @param currentGame the current game.
      */
-    public static void addToInventory(String userRequest, Room currentRoom, Game currentGame) {
-        for (Item nextItem : currentRoom.getItems()) {
+    public static void addToInventory(String userRequest, Game currentGame) {
+        for (Item nextItem : currentGame.getCurrentRoom().getItems()) {
 
             if (nextItem.getItemName().equalsIgnoreCase(userRequest)) {
-                currentRoom.getItems().remove(nextItem);
+                currentGame.getCurrentRoom().getItems().remove(nextItem);
                 currentGame.getInventory().add(nextItem);
+                break;
             }
         }
     }
@@ -82,15 +74,14 @@ public class ChangeState {
      * Moves item in the users inventory to the room
      *
      * @param userRequest what item the user wants to drop.
-     * @param currentRoom what room the user is
      * @param currentGame the inventory of the user
-     * @return the item that will be removed.
      */
-    public static void removeFromInventory(String userRequest, Room currentRoom, Game currentGame) {
+    public static void removeFromInventory(String userRequest, Game currentGame) {
         for (Item nextItem : currentGame.getInventory()) {
             if (nextItem.getItemName().equalsIgnoreCase(userRequest)) {
-                currentRoom.getItems().add(nextItem);
+                currentGame.getCurrentRoom().getItems().add(nextItem);
                 currentGame.getInventory().remove(nextItem);
+                break;
             }
         }
     }
@@ -99,15 +90,14 @@ public class ChangeState {
      * Takes the game and the room and checks if the user is in a winning or losing room.
      *
      * @param currentGame the current game.
-     * @param currentRoom the users current room.
      * @return a boolean that updates if the game loop should still run.
      */
-    public static boolean checkForEnd(Game currentGame, Room currentRoom) {
-        if (currentRoom.getName().equals(currentGame.getWinningRoom())) {
+    public static boolean checkForEnd(Game currentGame) {
+        if (currentGame.getCurrentRoom().getName().equals(currentGame.getWinningRoom())) {
             System.out.println("Congratulations You Won!");
             return false;
-        } else if (currentRoom.getName().equals(currentGame.getLosingRoom())) {
-            System.out.println(currentRoom.getDescription());
+        } else if (currentGame.getCurrentRoom().getName().equals(currentGame.getLosingRoom())) {
+            System.out.println(currentGame.getCurrentRoom().getDescription());
             return false;
         }
         return true;
