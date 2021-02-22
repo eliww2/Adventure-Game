@@ -1,5 +1,6 @@
 package student.adventure;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -7,6 +8,8 @@ public class Game {
     private String instructions;
     private String startingRoom, winningRoom, losingRoom;
     private Room[] rooms;
+    private List<Item> inventory = new ArrayList<>();
+
 
     /**
      * @return the instructions for this game.
@@ -32,5 +35,10 @@ public class Game {
      * @return the rooms available in this game.
      */
     public Room[] getRooms() { return rooms; }
+
+    /**
+     * @return the inventory for this game.
+     */
+    public List<Item> getInventory() { return inventory; }
 
 }

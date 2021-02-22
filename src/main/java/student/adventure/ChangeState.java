@@ -19,6 +19,7 @@ public class ChangeState {
         for (Direction nextDirection : currentRoom.getDirections()) {
             System.out.print(nextDirection.getDirectionName() + ", ");
         }
+
         System.out.print("\nItems visible: ");
         for (Item nextItem : currentRoom.getItems()) {
             System.out.print(nextItem.getItemName() + ", ");
@@ -46,13 +47,18 @@ public class ChangeState {
             if (nextDirection.getDirectionName().equalsIgnoreCase(userRequest)) {
                 for (Room nextRoom : game.getRooms()) {
                     if (nextRoom.getName().equals(nextDirection.getRoomName())) {
-                        return nextRoom;
+                        if(!(nextRoom.getMaskRequired()) && !(nextRoom.getKeyRequired())) {
+                            return nextRoom;
+                        } else {
+                            System.out.println("Hmmmmm, I think you need something to enter here");
+                            return currentRoom;
+                        }
                     }
                 }
             }
         }
 
-        System.out.println("\nI can't go" + userRequest);
+        System.out.println("\nI can't go " + userRequest);
         return currentRoom;
     }
 
@@ -110,6 +116,26 @@ public class ChangeState {
             return false;
         }
         return true;
+    }
+
+    public static void useItem(String userRequest, Game currentGame, Room currentRoom) {
+        int itemIndex = 0;
+
+        for (Item nextItem : currentRoom.getItems()) {
+
+            if (nextItem.getItemName().equalsIgnoreCase(userRequest)) {
+                System.out.println("\nUsing " + nextItem.getItemName());
+                if (nextItem.getItemName().equalsIgnoreCase("mask")) {
+                    currentRoom.setMaskRequired(false);
+                } else if (nextItem.getItemName().equalsIgnoreCase("key")) {
+                    currentRoom.setKeyRequired(false);
+                }
+                currentRoom.getItems().remove(itemIndex);
+                break;
+            }
+            itemIndex++;
+        }
+        System.out.println("You can't use that!");
     }
 
 }

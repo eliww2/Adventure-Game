@@ -12,7 +12,9 @@
     }],
     "items": [{
       "itemName": "Mask"
-    }]
+    }],
+    "maskRequired": false,
+    "keyRequired": false
   },
     {
       "name": "BlockOne",
@@ -33,7 +35,9 @@
           "directionName": "Home",
           "room": "Home"
         }
-      ]
+      ],
+      "maskRequired": false,
+      "keyRequired": false
     },
     {
       "name": "BlockTwo",
@@ -54,7 +58,9 @@
           "directionName": "Workout",
           "room": "TheARC"
         }
-      ]
+      ],
+      "maskRequired": false,
+      "keyRequired": false
     },
     {
       "name": "BlockThree",
@@ -75,7 +81,9 @@
           "directionName": "South",
           "room": "BlockTwo"
         }
-      ]
+      ],
+      "maskRequired": false,
+      "keyRequired": false
     },
     {
       "name": "FatSandwich",
@@ -86,7 +94,9 @@
       }],
       "items": [{
         "itemName": "FatIllini"
-      }]
+      }],
+      "maskRequired": true,
+      "keyRequired": false
     },
     {
       "name": "CovidTestCenter",
@@ -97,7 +107,9 @@
       }],
       "items": [{
         "itemName": "TestTube"
-      }]
+      }],
+      "maskRequired": true,
+      "keyRequired": false
     },
     {
       "name": "TheQuad",
@@ -105,11 +117,15 @@
       "directions": [{
         "directionName": "South",
         "room": "BlockThree"
-      }]
+      }],
+      "maskRequired": true,
+      "keyRequired": false
     },
     {
       "name": "ProfessorsHouse",
-      "description": "Why did you think that was a good idea? The cops arrested you for breaking and entering."
+      "description": "Why did you think that was a good idea? The cops arrested you for breaking and entering.",
+      "maskRequired": true,
+      "keyRequired": true
     },
     {
       "name": "TheARC",
@@ -117,7 +133,9 @@
       "directions": [{
         "directionName": "Outside",
         "room": "BlockTwo"
-      }]
+      }],
+      "maskRequired": true,
+      "keyRequired": false
     },
     {
       "name": "EngineeringLibrary",
@@ -128,11 +146,15 @@
       }],
       "items": [{
         "itemName": "Key"
-      }]
+      }],
+      "maskRequired": true,
+      "keyRequired": false
     },
     {
       "name": "Kams",
-      "description": "You made it to Kam's! Go have a good night with your friends!"
+      "description": "You made it to Kam's! Go have a good night with your friends!",
+      "maskRequired": true,
+      "keyRequired": false
     }
   ]
 }
