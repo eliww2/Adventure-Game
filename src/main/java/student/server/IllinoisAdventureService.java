@@ -11,18 +11,10 @@ import java.util.*;
 public class IllinoisAdventureService implements AdventureService {
 
     private Map<Integer, Game> gameInstance = new HashMap<>();
-    private int gameId = 0;
+    private int gameId;
     private Gson gson = new Gson();
     private Reader jsonReader;
     private final String[] gameActions = {"Take", "Drop", "Use", "Go", "Exit", "Examine"};
-
-    public IllinoisAdventureService() {
-        try {
-            jsonReader = Files.newBufferedReader(Paths.get("src/main/resources/illinois.json"));
-        } catch (Exception e) {
-            System.out.println("That wasn't good!");
-        }
-    }
 
     @Override
     public void reset() {
@@ -31,11 +23,15 @@ public class IllinoisAdventureService implements AdventureService {
 
     @Override
     public int newGame() throws AdventureException {
+        try {
+            jsonReader = Files.newBufferedReader(Paths.get("src/main/resources/illinois.json"));
+        } catch (Exception e) { }
         Game newGame = gson.fromJson(jsonReader, Game.class);
         newGame.setCurrentRoom(newGame.getRooms()[0]);
         gameInstance.put(gameId, newGame);
         int thisGame = gameId;
         gameId++;
+        System.out.println("hello993");
         return thisGame;
     }
 
