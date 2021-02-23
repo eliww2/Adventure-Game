@@ -1,5 +1,5 @@
 import org.glassfish.grizzly.http.server.HttpServer;
-import student.adventure.GameEngine;
+import student.adventure.GameLoop;
 import student.server.AdventureResource;
 import student.server.AdventureServer;
 
@@ -9,6 +9,6 @@ public class Main {
     public static void main(String[] args) throws IOException {
         HttpServer server = AdventureServer.createServer(AdventureResource.class);
         server.start();
-        GameEngine.startGame(args[0]);
+        GameLoop.startGame(args[0]);
     }
 }

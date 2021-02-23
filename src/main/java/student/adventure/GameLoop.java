@@ -8,7 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-public class GameEngine {
+public class GameLoop {
 
     /**
      * @param gameFile takes the game file in json and runs it.
@@ -26,7 +26,8 @@ public class GameEngine {
         System.out.println(currentGame.getInstructions());
 
         while (running) {
-            ChangeState.whereIsUser(currentGame);
+            System.out.println(ChangeState.whereIsUser(currentGame));
+            System.out.print("\n>");
 
             //Strings for parsing the user input
             String userInput = in.nextLine().trim();

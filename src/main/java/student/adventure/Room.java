@@ -8,6 +8,7 @@ public class Room {
     private Direction[] directions;
     private List<Item> items = new ArrayList<>();
     private Boolean maskRequired, keyRequired, testRequired;
+    private String imageUrl, videoUrl;
 
     /**
      * @return name of the room.
@@ -43,6 +44,16 @@ public class Room {
      * @return if the room needs a covid test to enter.
      */
     public Boolean getTestRequired() { return testRequired; }
+
+    /**
+     * @return the link to the picture for this room.
+     */
+    public String getImageUrl() { return imageUrl; }
+
+    /**
+     * @return the link to the video for this room.
+     */
+    public String getVideoUrl() { return videoUrl; }
 
     /**
      * @param bool sets maskRequired boolean.

@@ -14,7 +14,9 @@
     }],
     "maskRequired": false,
     "keyRequired": false,
-    "testRequired": false
+    "testRequired": false,
+    "imageUrl": "https://housing.illinois.edu/-/media/fy19-hall-template/weston/gallery/weston-hero2.ashx",
+    "videoUrl": "https://www.youtube.com/watch?v=PYI09PMNazw"
   },
     {
       "name": "BlockOne",
@@ -38,7 +40,9 @@
       ],
       "maskRequired": false,
       "keyRequired": false,
-      "testRequired": false
+      "testRequired": false,
+      "imageUrl": "https://difcdn.denverinfill.com/wp-content/uploads/2014/03/19055452/2014-03-25_OneCityBlock-06.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=aT66uumZ0Zo"
     },
     {
       "name": "BlockTwo",
@@ -62,7 +66,9 @@
       ],
       "maskRequired": false,
       "keyRequired": false,
-      "testRequired": false
+      "testRequired": false,
+      "imageUrl": "https://cdn.pixabay.com/photo/2017/04/27/14/21/historic-buildings-2265626_960_720.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=aT66uumZ0Zo"
     },
     {
       "name": "BlockThree",
@@ -86,7 +92,9 @@
       ],
       "maskRequired": false,
       "keyRequired": false,
-      "testRequired": false
+      "testRequired": false,
+      "imageUrl": "http://woodseng.com/wp-content/uploads/2017/01/City-Block-2.jpg.png",
+      "videoUrl": "https://www.youtube.com/watch?v=aT66uumZ0Zo"
     },
     {
       "name": "FatSandwich",
@@ -100,7 +108,9 @@
       }],
       "maskRequired": true,
       "keyRequired": false,
-      "testRequired": true
+      "testRequired": true,
+      "imageUrl": "http://2.bp.blogspot.com/-1l8VWaZq0EQ/T3emlSTyXmI/AAAAAAAAA6s/_tWGLkOxt1w/s1600/007.JPG",
+      "videoUrl": "https://www.youtube.com/watch?v=k-cavEKkirc"
     },
     {
       "name": "CovidTestCenter",
@@ -114,7 +124,9 @@
       }],
       "maskRequired": true,
       "keyRequired": false,
-      "testRequired": false
+      "testRequired": false,
+      "imageUrl": "https://img.medscapestatic.com/thumbnail_library/khn_200821_uiuc_tests1_690x528.jpg?interpolation=lanczos-none&resize=339:*",
+      "videoUrl": "https://www.youtube.com/watch?v=SrA-ULkAzVM"
     },
     {
       "name": "TheQuad",
@@ -125,14 +137,18 @@
       }],
       "maskRequired": true,
       "keyRequired": false,
-      "testRequired": false
+      "testRequired": false,
+      "imageUrl": "https://media.glassdoor.com/l/79/0e/be/69/main-quad-and-follinger.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=FoXxpGZZHo4"
     },
     {
       "name": "ProfessorsHouse",
       "description": "Why did you think that was a good idea? The cops arrested you for breaking and entering.",
       "maskRequired": true,
       "keyRequired": true,
-      "testRequired": false
+      "testRequired": false,
+      "imageUrl": "https://c8.alamy.com/comp/AHRPRF/handcuffed-man-being-put-into-police-car-richmond-virginia-AHRPRF.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=4HziZ3yZDJY"
     },
     {
       "name": "TheARC",
@@ -143,7 +159,9 @@
       }],
       "maskRequired": true,
       "keyRequired": false,
-      "testRequired": true
+      "testRequired": true,
+      "imageUrl": "https://campusrec.illinois.edu/wp-content/grand-media/image/ARC_19_ACP_UL-track-01.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=XmiOZ9AMUDo"
     },
     {
       "name": "EngineeringLibrary",
@@ -157,14 +175,18 @@
       }],
       "maskRequired": true,
       "keyRequired": false,
-      "testRequired": true
+      "testRequired": true,
+      "imageUrl": "https://www.library.illinois.edu/assets/images/buildings/display/building_324.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=wfF0zHeU3Zs"
     },
     {
       "name": "Kams",
       "description": "You made it to Kam's! Go have a good night with your friends!",
       "maskRequired": true,
       "keyRequired": false,
-      "testRequired": true
+      "testRequired": true,
+      "imageUrl": "https://dailyillini.com/wp-content/uploads/2020/01/EmptyName-6-900x600.jpg",
+      "videoUrl": "https://www.youtube.com/watch?v=SSbBvKaM6sk"
     }
   ]
 }

@@ -7,25 +7,25 @@ public class ChangeState {
      *
      * @param currentGame takes the room so it displays the right info.
      */
-    public static void whereIsUser(Game currentGame) {
-        System.out.println("\n" + currentGame.getCurrentRoom().getDescription());
+    public static String whereIsUser(Game currentGame) {
+        String messageToUser = currentGame.getCurrentRoom().getDescription();
 
-        System.out.print("From here, you can go: ");
+        messageToUser += "\n" + "From here, you can go: ";
         for (Direction nextDirection : currentGame.getCurrentRoom().getDirections()) {
-            System.out.print(nextDirection.getDirectionName() + ", ");
+            messageToUser += nextDirection.getDirectionName() + ", ";
         }
 
-        System.out.print("\nItems visible: ");
+        messageToUser += "\nItems visible: ";
         for (Item nextItem : currentGame.getCurrentRoom().getItems()) {
-            System.out.print(nextItem.getItemName() + ", ");
+            messageToUser += nextItem.getItemName() + ", ";
         }
 
-        System.out.print("\nYou're Items are: ");
+        messageToUser += "\nYou're Items are: ";
         for (Item nextItem : currentGame.getInventory()) {
-            System.out.print(nextItem.getItemName() + ", ");
+            messageToUser += nextItem.getItemName() + ", ";
         }
-        System.out.print("\n\n>");
 
+        return messageToUser;
     }
 
     /**
