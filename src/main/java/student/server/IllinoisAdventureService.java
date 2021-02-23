@@ -14,7 +14,7 @@ public class IllinoisAdventureService implements AdventureService {
     private int gameId = 0;
     private Gson gson = new Gson();
     private Reader jsonReader;
-    private final String[] nonStaticCommands = {"Take", "Drop", "Use", "Go"};
+    private final String[] gameActions = {"Take", "Drop", "Use", "Go", "Exit", "Examine"};
 
     public IllinoisAdventureService() {
         try {
@@ -47,7 +47,7 @@ public class IllinoisAdventureService implements AdventureService {
         Map<String, List<String>> commandOptions = new HashMap<>();
 
         //populates the command options map
-        for (String nextString : nonStaticCommands) {
+        for (String nextString : gameActions) {
             List<String> commands = new ArrayList<>();
             if (nextString.equalsIgnoreCase("take")) {
                 for (Item nextItem : currentRoom.getItems()) {
