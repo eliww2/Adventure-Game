@@ -21,6 +21,7 @@ public class ChangeState {
         }
 
         messageToUser += "\nYou're Items are: ";
+
         for (Item nextItem : currentGame.getInventory()) {
             messageToUser += nextItem.getItemName() + ", ";
         }
@@ -41,9 +42,9 @@ public class ChangeState {
                 for (Room nextRoom : currentGame.getRooms()) {
                     if (nextRoom.getName().equals(nextDirection.getRoomName())) {
                         if(!(nextRoom.getMaskRequired()) && !(nextRoom.getKeyRequired()) && !(nextRoom.getTestRequired())) {
-                           noEnter = false;
-                           currentGame.setCurrentRoom(nextRoom);
-                           break;
+                            noEnter = false;
+                            currentGame.setCurrentRoom(nextRoom);
+                            break;
                         }
                     }
                 }

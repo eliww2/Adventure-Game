@@ -144,6 +144,7 @@
     {
       "name": "ProfessorsHouse",
       "description": "Why did you think that was a good idea? The cops arrested you for breaking and entering.",
+      "directions": [],
       "maskRequired": true,
       "keyRequired": true,
       "testRequired": false,
@@ -165,7 +166,7 @@
     },
     {
       "name": "EngineeringLibrary",
-      "description": "You enter the Engineering Library Exams are next week and you hear people crying. Oh well you still have to study.",
+      "description": "You enter the Engineering Library. Exams are next week and you hear people crying. Oh well, you still have to study.",
       "directions": [{
         "directionName": "OutSide",
         "room": "BlockOne"
@@ -182,6 +183,7 @@
     {
       "name": "Kams",
       "description": "You made it to Kam's! Go have a good night with your friends!",
+      "directions": [],
       "maskRequired": true,
       "keyRequired": false,
       "testRequired": true,
