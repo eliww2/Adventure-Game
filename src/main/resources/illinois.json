@@ -108,7 +108,7 @@
       }],
       "maskRequired": true,
       "keyRequired": false,
-      "testRequired": true,
+      "testRequired": false,
       "imageUrl": "http://2.bp.blogspot.com/-1l8VWaZq0EQ/T3emlSTyXmI/AAAAAAAAA6s/_tWGLkOxt1w/s1600/007.JPG",
       "videoUrl": "https://www.youtube.com/watch?v=k-cavEKkirc"
     },

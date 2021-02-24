@@ -44,3 +44,4 @@ public class JsonTest {
         assertEquals("FatIllini", illinoisAdventure.getRooms()[4].getItems().get(0).getItemName());
     }
 }
+

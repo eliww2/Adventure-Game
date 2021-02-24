@@ -9,6 +9,6 @@ public class Main {
     public static void main(String[] args) throws IOException {
         HttpServer server = AdventureServer.createServer(AdventureResource.class);
         server.start();
-        GameLoop.startGame(args[0]);
+        GameLoop.startGame("src/main/resources/illinois.json");
     }
 }

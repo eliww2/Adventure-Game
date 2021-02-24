@@ -16,11 +16,19 @@ public class IllinoisAdventureService implements AdventureService {
     private Reader jsonReader;
     private final String[] gameActions = {"Take", "Drop", "Use", "Go", "Exit", "Examine"};
 
+    /**
+     * Gets rid of all saved states of all games.
+     */
     @Override
     public void reset() {
         gameInstance.clear();
     }
 
+    /**
+     * Starts a new game.
+     * @return Return the id of the game that was just created.
+     * @throws AdventureException if something goes wrong.
+     */
     @Override
     public int newGame() throws AdventureException {
         try {
@@ -31,10 +39,14 @@ public class IllinoisAdventureService implements AdventureService {
         gameInstance.put(gameId, newGame);
         int thisGame = gameId;
         gameId++;
-        System.out.println("hello993");
         return thisGame;
     }
 
+    /**
+     * Finds the game and it's state based on the users request.
+     * @param id the instance id
+     * @return The status or state of that current game.
+     */
     @Override
     public GameStatus getGame(int id) {
         Game currentGame = gameInstance.get(id);
@@ -68,12 +80,25 @@ public class IllinoisAdventureService implements AdventureService {
         );
     }
 
+    /**
+     * Will completely delete the game of the instance the user requests to be destroyed.
+     * @param id the instance id
+     * @return If there is a game with that Id then it will return true, else returns false.
+     */
     @Override
     public boolean destroyGame(int id) {
-        gameInstance.remove(id);
-        return true;
+        if (gameInstance.containsKey(id)) {
+            gameInstance.remove(id);
+            return true;
+        }
+        return false;
     }
 
+    /**
+     * Determine what command the user wants, then calls the correct function to change the games state.
+     * @param id the instance id
+     * @param command the issued command
+     */
     @Override
     public void executeCommand(int id, Command command) {
         if (command.getCommandName().equalsIgnoreCase("go")) {
@@ -87,8 +112,14 @@ public class IllinoisAdventureService implements AdventureService {
         }
     }
 
+    /**
+     * Not implemented.
+     * @return not implemented.
+     */
     @Override
     public SortedMap<String, Integer> fetchLeaderboard() {
         return null;
     }
+
+    public Map<Integer, Game> getGameInstance() { return gameInstance; }
 }
